@@ -1,0 +1,22 @@
+{
+  "name": "cypheak",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".#parse_csv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vargas88hugo/Cypheak.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vargas88hugo/Cypheak/issues"
+  },
+  "homepage": "https://github.com/vargas88hugo/Cypheak#readme",
+  "dependencies": {
+    "csv": "^0.3.7"
+  }
+}
