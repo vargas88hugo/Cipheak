@@ -10,7 +10,7 @@ const myData1 = [];
 const parseWord = require('./parseWord');
 
 /**
- * This is the main method that parses the csv file to an array
+ * This a method that parses the csv file to an array
  */
 const rootTranslation = () => {
   let words = obj.from.path('./words.csv').to.array((data) => {
@@ -21,7 +21,8 @@ const rootTranslation = () => {
 }
 
 /**
- * Method that iterates the CSV data
+ * Method that iterates the CSV data for creating a new array with 
+ * the parsed data
  */
 const loopData = (data) => {
   let count = 1;
