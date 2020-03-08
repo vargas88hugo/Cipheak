@@ -7,7 +7,7 @@
 const csv = require('csv');
 const obj = csv();
 const myData1 = [];
-const parseWord = require('../parseWord');
+const parseWord = require('./parseWord');
 
 /**
  * This is the main method that parses the csv file to an array
@@ -28,7 +28,7 @@ const loopData = (data) => {
 
   for (let i = 1; i <= 79; i++) {
     const myData2 = [];
-    myData1.push(count++);
+    // myData1.push(count++);
 
     myData2.push(data[i][0]);
     for (let j = 0; j <= 82; j++) {
@@ -45,4 +45,4 @@ const loopData = (data) => {
   return myData1;
 }
 
-module.exports = rootTranslation;
+module.exports = rootTranslation();
