@@ -10,7 +10,8 @@ const myData1 = [];
 const parseWord = require('./parseWord');
 
 /**
- * This a method that parses the csv file to an array
+ * This a method that parses the csv file to an array with esperanto word
+ * as the first element of each subarray
  */
 const rootTranslation = () => {
   let words = obj.from.path('./words.csv').to.array((data) => {
