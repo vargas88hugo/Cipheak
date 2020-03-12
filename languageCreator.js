@@ -1,19 +1,53 @@
+const vocalConsonantCreator = require('./generator/vocalConsonantCreator');
 const rootTranslations = require('./generator/rootTranslations/rootTranslations');
-const endingCreator = require('./generator/endingCreator');
+const endingCreator = require('./generator/endCreator');
+const pronounCreator = require('./generator/pronounCreator');
+const correlativeCreator = require('./generator/correlativeCreator');
+const CorrelativeCreator = require('./generator/correlativeCreator');
 
-let languageCreator = () => {
-    let ending = new endingCreator();
-    let language = []
+class LanguageCreator {
+  constructor() {
+    this.setAlphabet();
+    this.setPronouns();
+    this.setRoots();
+    this.setPronouns();
+    this.setTerminations();
+    this.setYNQuestion();
+    this.setCorrelatives();
+    delete this.combinations;
+  }
+  
+  setPronouns() {
+    this.pronouns = new pronounCreator(this.combinations);
+    this.pronouns = {...this.pronouns.pronouns};
+  }
 
-    for (let i = 0; i < rootTranslations.length; i++) {
-        language = [...language, []]
-        language[i] = [...language[i], rootTranslations[i][0]];
-        language[i] = [...language[i], rootTranslations[i][Math.floor(Math.random() * (rootTranslations[i].length - 1)) + 1] + ending.ends.endNoun];
+  setAlphabet() {
+    this.combinations = new vocalConsonantCreator();
+    this.combinations = {...this.combinations};
+    this.alphabet = {
+      'vowels': [...this.combinations.vowels],
+      'consonants': [...this.combinations.consonants],
+      'specialVowels': [...this.combinations.specialvowels],
+      'speciaConsonants': [...this.combinations.specialConsonants]
     }
+  }
 
-    console.log(rootTranslations);
+  setRoots() {
+    this.roots = rootTranslations();
+  }
 
-    return language;
-};
+  setTerminations() {
+    this.terminations = new endingCreator(this.combinations).ends;
+  }
 
-module.exports = languageCreator;
+  setYNQuestion() {
+    this.ynQuestion = this.combinations.vowelConsonants.splice(Math.random() * this.combinations.vowelConsonants.length, 1).toString();
+  }
+
+  setCorrelatives() {
+    this.correlatives = new CorrelativeCreator(this.combinations).correlatives;
+  }
+}
+
+module.exports = LanguageCreator;
