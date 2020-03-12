@@ -10,7 +10,7 @@ const myData1 = [];
 const parseWord = require('./parseWord');
 
 /**
- * This a method that parses the csv file to an array with esperanto word
+ * This a method that parses the csv file to an array with esperanto words
  * as the first element of each subarray
  */
 const rootTranslation = () => {
@@ -47,4 +47,4 @@ const loopData = (data) => {
   return myData1;
 }
 
-module.exports = rootTranslation();
+module.exports = rootTranslation;
