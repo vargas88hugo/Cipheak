@@ -27,6 +27,10 @@ const parseWord = (data, i, j) => {
   for (const [charac, regex] of entries) {
     data[i][j] = data[i][j].replace(regex, charac);
   }
+
+  while (vocals.includes(data[i][j][data[i][j].length - 1])) {
+    data[i][j] = data[i][j].substring(0, data[i][j].length - 1);
+  }
 }
 
 

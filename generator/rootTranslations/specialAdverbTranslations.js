@@ -1,20 +1,20 @@
 #!/usr/bin/node
 /**
- * This program parses the root CSV file to an ordered array
+ * This program parses the adverbs CSV file to an ordered array
  * with parsing
  */
 
 const csv = require('csv');
 const obj = csv();
 const myData1 = [];
-const parseRoot = require('./parseRoot');
+const parseWord = require('./parseWord');
 
 /**
- * This a method that parses the root csv file to an array with esperanto words
+ * This a method that parses the adverb csv file to an array with esperanto words
  * as the first element of each subarray
  */
-const rootTranslation = () => {
-  let words = obj.from.path('./words.csv').to.array((data) => {
+const adverbTranslation = () => {
+  let words = obj.from.path('./adverbs.csv').to.array((data) => {
     let parseData = loopData(data);
   });
 
@@ -35,7 +35,7 @@ const loopData = (data) => {
     myData2.push(data[i][0].toLowerCase());
     for (let j = 0; data[i][j] !== undefined && data[i][j] !== ''; j++) {
       if (data[i][j] !== undefined && data[i][j] !== "" && data[i][j].length > 2 && data[i][j].length <= 10) {
-	      parseRoot(data, i, j);
+	      parseWord(data, i, j);
 	      if (data[i][j].length < 2) {
 	        continue;
 	      }
@@ -47,4 +47,4 @@ const loopData = (data) => {
   return myData1;
 }
 
-module.exports = rootTranslation;
+module.exports = adverbTranslation;
