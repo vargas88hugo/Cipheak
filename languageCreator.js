@@ -21,6 +21,7 @@ class LanguageCreator {
     this.setNumbers();
     this.setPrepositions();
     this.setSpecialAdverbs();
+    this.setAffixes();
     delete this.combinations;
   }
   
@@ -45,7 +46,7 @@ class LanguageCreator {
   
     for (let i = 1; i < rootTranslations.length; i++) {
       if (rootTranslations[i][0] !== undefined && rootTranslations[i][0] !== '') {
-        this.roots[rootTranslations[i][0]] = rootTranslations[i][Math.floor(Math.random() * (rootTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]);
+        this.roots[rootTranslations[i][0]] = rootTranslations[i][Math.floor(Math.random() * (rootTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]).replace(/j/g, this.alphabet.specialVowels[0]);
       }
     }
   }
@@ -67,7 +68,7 @@ class LanguageCreator {
   
     for (let i = 1; i < conjunctionTranslations.length; i++) {
       if (conjunctionTranslations[i][0] !== undefined && conjunctionTranslations[i][0] !== '') {
-        this.conjunctions[conjunctionTranslations[i][0]] = conjunctionTranslations[i][Math.floor(Math.random() * (conjunctionTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]);
+        this.conjunctions[conjunctionTranslations[i][0]] = conjunctionTranslations[i][Math.floor(Math.random() * (conjunctionTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]).replace(/j/g, this.alphabet.specialVowels[0]);
       }
     }
   }
@@ -77,7 +78,7 @@ class LanguageCreator {
   
     for (let i = 1; i < numberTranslations.length; i++) {
       if (numberTranslations[i][0] !== undefined && numberTranslations[i][0] !== '') {
-        this.numbers[numberTranslations[i][0]] = numberTranslations[i][Math.floor(Math.random() * (numberTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]);
+        this.numbers[numberTranslations[i][0]] = numberTranslations[i][Math.floor(Math.random() * (numberTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]).replace(/j/g, this.alphabet.specialVowels[0]);
       }
     }
   }
@@ -87,7 +88,7 @@ class LanguageCreator {
   
     for (let i = 1; i < prepositionTranslations.length; i++) {
       if (prepositionTranslations[i][0] !== undefined && prepositionTranslations[i][0] !== '') {
-        this.prepositions[prepositionTranslations[i][0]] = prepositionTranslations[i][Math.floor(Math.random() * (prepositionTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]);
+        this.prepositions[prepositionTranslations[i][0]] = prepositionTranslations[i][Math.floor(Math.random() * (prepositionTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]).replace(/j/g, this.alphabet.specialVowels[0]);
       }
     }
   }
@@ -97,9 +98,13 @@ class LanguageCreator {
   
     for (let i = 1; i < specialAdverbTranslations.length; i++) {
       if (specialAdverbTranslations[i][0] !== undefined && specialAdverbTranslations[i][0] !== '') {
-        this.specialAdverbs[specialAdverbTranslations[i][0]] = specialAdverbTranslations[i][Math.floor(Math.random() * (specialAdverbTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]);
+        this.specialAdverbs[specialAdverbTranslations[i][0]] = specialAdverbTranslations[i][Math.floor(Math.random() * (specialAdverbTranslations[i].length - 1)) + 1].replace(/ch/g, this.alphabet.specialConsonants[0]).replace(/sh/g, this.alphabet.specialConsonants[3]).replace(/j/g, this.alphabet.specialVowels[0]);
       }
     }
+  }
+
+  setAffixes() {
+
   }
 }
 
