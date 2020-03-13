@@ -7,6 +7,8 @@ const conjunctionTranslations = require('./generator/rootTranslations/conjunctio
 const numberTranslations = require('./generator/rootTranslations/numberTranslations')();
 const prepositionTranslations = require('./generator/rootTranslations/prepositionTranslations')();
 const specialAdverbTranslations = require('./generator/rootTranslations/specialAdverbTranslations')();
+const SuffixCreator = require('./generator/suffixCreator');
+const PreffixCreator = require('./generator/preffixCreator');
 
 class LanguageCreator {
   constructor() {
@@ -104,7 +106,8 @@ class LanguageCreator {
   }
 
   setAffixes() {
-
+    this.suffixes = new SuffixCreator(this.combinations).suffixes;
+    this.preffixes = new PreffixCreator(this.combinations).preffixes;
   }
 }
 

@@ -12,6 +12,7 @@ class Combinator {
     this.vowelVowels = this.setVowelVowels(this.vowels, this.specialvowels);
     this.consonantVowels = this.setConsonantVowels(this.vowels, this.consonants);
     this.consonantVowelVowels = this.setConsonantVowelVowels(this.vowels, this.consonants);
+    this.consonantVowelConsonants = this.setConsonantVowelConsonants(this.vowels, this.consonants);
   }
   
   setConsonants() {
@@ -80,6 +81,22 @@ class Combinator {
         for (let k = 0; k < vowels.length; k++) {
           if (vowels[i] != vowels[k]) {
             combinations = [...combinations, consonants[j] + vowels[k] + vowels[i]];
+          }
+        }
+      }
+    }
+  
+    return combinations;
+  }
+
+  setConsonantVowelConsonants(vowels, consonants) {
+    let combinations = [];
+      
+    for (let i = 0; i < vowels.length; i++) {
+      for (let j = 0; j < consonants.length; j++) {
+        for (let k = 0; k < consonants.length; k++) {
+          if (vowels[i] != consonants[k]) {
+            combinations = [...combinations, consonants[j] + vowels[i] + consonants[k]];
           }
         }
       }
