@@ -106,8 +106,8 @@ class LanguageCreator {
   }
 
   setAffixes() {
-    this.suffixes = new SuffixCreator(this.combinations).suffixes;
     this.preffixes = new PreffixCreator(this.combinations).preffixes;
+    this.suffixes = new SuffixCreator(this.combinations).suffixes;
   }
 }
 
