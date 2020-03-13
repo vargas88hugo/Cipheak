@@ -9,6 +9,8 @@ const prepositionTranslations = require('./generator/rootTranslations/prepositio
 const specialAdverbTranslations = require('./generator/rootTranslations/specialAdverbTranslations')();
 const SuffixCreator = require('./generator/suffixCreator');
 const PreffixCreator = require('./generator/preffixCreator');
+const PerfectTCreator = require('./generator/perfectTCreator');
+const ContinuouTCreator = require('./generator/continuouTCreator');
 
 class LanguageCreator {
   constructor() {
@@ -24,6 +26,7 @@ class LanguageCreator {
     this.setPrepositions();
     this.setSpecialAdverbs();
     this.setAffixes();
+    this.setTimes();
     delete this.combinations;
   }
   
@@ -108,6 +111,11 @@ class LanguageCreator {
   setAffixes() {
     this.preffixes = new PreffixCreator(this.combinations).preffixes;
     this.suffixes = new SuffixCreator(this.combinations).suffixes;
+  }
+
+  setTimes() {
+    this.perfectTimes = new PerfectTCreator(this.combinations).perfects;
+    this.continuouTimes = new ContinuouTCreator(this.combinations).continuous; 
   }
 }
 
