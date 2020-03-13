@@ -28,18 +28,18 @@ const rootTranslation = () => {
 const loopData = (data) => {
   let count = 1;
 
-  for (let i = 1; i <= 79; i++) {
+  for (let i = 1; data[i] !== undefined && data[i].length !== 0; i++) {
     const myData2 = [];
-    // myData1.push(count++);
+    myData1.push(count++);
 
     myData2.push(data[i][0]);
-    for (let j = 0; j <= 82; j++) {
+    for (let j = 0; data[i][j] !== undefined && data[i][j] !== ''; j++) {
       if (data[i][j] !== undefined && data[i][j] !== "" && data[i][j].length > 2 && data[i][j].length <= 10) {
-	parseWord(data, i, j);
-	if (data[i][j].length < 2) {
-	  continue;
-	}
-	myData2.push(data[i][j]);
+	      parseWord(data, i, j);
+	      if (data[i][j].length < 2) {
+	        continue;
+	      }
+	      myData2.push(data[i][j]);
       }
     }
     myData1.push(myData2);

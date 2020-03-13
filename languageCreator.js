@@ -1,8 +1,7 @@
-const vocalConsonantCreator = require('./generator/vocalConsonantCreator');
-const rootTranslations = require('./generator/rootTranslations/rootTranslations');
-const endingCreator = require('./generator/endCreator');
-const pronounCreator = require('./generator/pronounCreator');
-const correlativeCreator = require('./generator/correlativeCreator');
+const VocalConsonantCreator = require('./generator/vocalConsonantCreator');
+const rootTranslations = require('./generator/rootTranslations/rootTranslations')();
+const EndingCreator = require('./generator/endCreator');
+const PronounCreator = require('./generator/pronounCreator');
 const CorrelativeCreator = require('./generator/correlativeCreator');
 
 class LanguageCreator {
@@ -18,12 +17,12 @@ class LanguageCreator {
   }
   
   setPronouns() {
-    this.pronouns = new pronounCreator(this.combinations);
+    this.pronouns = new PronounCreator(this.combinations);
     this.pronouns = {...this.pronouns.pronouns};
   }
 
   setAlphabet() {
-    this.combinations = new vocalConsonantCreator();
+    this.combinations = new VocalConsonantCreator();
     this.combinations = {...this.combinations};
     this.alphabet = {
       'vowels': [...this.combinations.vowels],
@@ -34,11 +33,17 @@ class LanguageCreator {
   }
 
   setRoots() {
-    this.roots = rootTranslations();
+    this.roots = {};
+  
+    for (let i = 1; i < rootTranslations.length; i++) {
+      if (rootTranslations[i][0] !== undefined && rootTranslations[i][0] !== '') {
+        this.roots[rootTranslations[i][0]] = rootTranslations[i][Math.floor(Math.random() * (rootTranslations[i].length - 1)) + 1];
+      }
+    }
   }
 
   setTerminations() {
-    this.terminations = new endingCreator(this.combinations).ends;
+    this.terminations = new EndingCreator(this.combinations).ends;
   }
 
   setYNQuestion() {
