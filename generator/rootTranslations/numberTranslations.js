@@ -28,7 +28,7 @@ const numberTranslation = () => {
 const loopData = (data) => {
   let count = 1;
 
-  for (let i = 1; data[i] !== undefined && data[i].length !== 0; i++) {
+  for (let i = 0; data[i] !== undefined && data[i].length !== 0; i++) {
     const myData2 = [];
     // myData1.push(count++);
 
