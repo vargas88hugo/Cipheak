@@ -19,6 +19,7 @@ const parseWord = (data, i, j) => {
     "v": /[w]/g,
     "k": /[q]/g,
     "s": /[ŝ]/g,
+    "ks": /x/g
   }
   const entries = Object.entries(parsers);
    
