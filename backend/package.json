@@ -1,8 +1,8 @@
 {
-  "name": "cipheak",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": ".#parse_csv.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/vargas88hugo/Cypheak#readme",
   "dependencies": {
-    "csv": "^0.3.7"
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "csv": "^0.3.7",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.4"
   }
 }
