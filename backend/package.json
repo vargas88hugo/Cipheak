@@ -1,5 +1,5 @@
 {
-  "name": "cypheak",
+  "name": "cipheak",
   "version": "1.0.0",
   "description": "",
   "main": ".#parse_csv.js",
