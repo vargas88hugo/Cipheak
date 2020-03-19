@@ -1,28 +1,27 @@
-const bodyParser = require('body-parser');
-const cors = require('cors');
-
-const authRoutes = require('./auth/auth.routes');
-const properties = require('./config/properties');
-const DB = require('./config/db');
-
-DB();
-
 const express = require('express');
+const mongoose = require('mongoose')
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+
+const properties = require('./config/properties');
+const authRoutes = require('./google/auth.routes');
+const keys = require('./config/keys');
+require('./google/auth.model');
+require('./google/auth.controller');
+
+mongoose.connect(keys.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const app = express();
-const router = express.Router();
+app.use(cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors());
+authRoutes(app);
 
-app.use('/api', router);
-authRoutes(router);
-
-router.get('/', (req, res) => {
-  res.send('Hello World');
+app.listen(properties.PORT, () => {
+  console.log(`Server running on port ${properties.PORT}`);
 });
-
-app.use(router);
-
-app.listen(properties.PORT, () => console.log(`Server running on port ${properties.PORT}`));
