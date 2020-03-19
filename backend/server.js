@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const properties = require('./config/properties');
-const authRoutes = require('./google/auth.routes');
+const authRoutes = require('./authGoogle/auth.routes');
 const keys = require('./config/keys');
 require('./authGoogle/auth.model');
 require('./authGoogle/auth.controller');
