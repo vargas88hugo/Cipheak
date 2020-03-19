@@ -1,16 +1,16 @@
-const VocalConsonantCreator = require('./generator/vocalConsonantCreator');
-const rootTranslations = require('./generator/rootTranslations/rootTranslations')();
-const EndingCreator = require('./generator/endCreator');
-const PronounCreator = require('./generator/pronounCreator');
-const CorrelativeCreator = require('./generator/correlativeCreator');
-const conjunctionTranslations = require('./generator/rootTranslations/conjunctionTranslations')();
-const numberTranslations = require('./generator/rootTranslations/numberTranslations')();
-const prepositionTranslations = require('./generator/rootTranslations/prepositionTranslations')();
-const specialAdverbTranslations = require('./generator/rootTranslations/specialAdverbTranslations')();
-const SuffixCreator = require('./generator/suffixCreator');
-const PreffixCreator = require('./generator/preffixCreator');
-const PerfectTCreator = require('./generator/perfectTCreator');
-const ContinuouTCreator = require('./generator/continuouTCreator');
+const VocalConsonantCreator = require('./creator/vocalConsonantCreator');
+const rootTranslations = require('./translator/rootTranslations')();
+const EndingCreator = require('./creator/endCreator');
+const PronounCreator = require('./creator/pronounCreator');
+const CorrelativeCreator = require('./creator/correlativeCreator');
+const conjunctionTranslations = require('./translator/conjunctionTranslations')();
+const numberTranslations = require('./translator/numberTranslations')();
+const prepositionTranslations = require('./translator/prepositionTranslations')();
+const specialAdverbTranslations = require('./translator/specialAdverbTranslations')();
+const SuffixCreator = require('./creator/suffixCreator');
+const PreffixCreator = require('./creator/preffixCreator');
+const PerfectTCreator = require('./creator/perfectTCreator');
+const ContinuouTCreator = require('./creator/continuouTCreator');
 
 class LanguageCreator {
   constructor() {
