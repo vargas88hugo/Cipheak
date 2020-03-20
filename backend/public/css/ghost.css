@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'marker_feltregular';
+	src: url('../font/marker_felt-webfont.woff2') format('woff2'),
+		 url('../font/marker_felt-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+  }
+
 .container {
 	max-width: 50rem;
 	margin: auto;
@@ -86,6 +94,7 @@
 	text-align: center;
 	background-color: #fff;
 	border-radius: 50%;
+	margin-top: 70px;
 }
 
 /* --- Bubble dialogue Arrow --- */
@@ -101,6 +110,7 @@
 	background-color: transparent;
 	box-shadow: inset -1.5rem -1rem 0 #fff;
 	transform: rotate(-20deg);
+	margin-left: 15px;
 }
 .ghost__text {
 	margin: auto;

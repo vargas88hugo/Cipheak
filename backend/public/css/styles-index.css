@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'marker_feltregular';
+    src: url('../font/marker_felt-webfont.woff2') format('woff2'),
+         url('../font/marker_felt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body {
     margin: 0px;
     background: linear-gradient(#231651, #2CF6B3);
@@ -11,7 +19,8 @@ h3 {
     color: white;
     font-size: 30px;
     font-weight: 700;
-    text-decoration: underline;
+    font-family: 'marker_feltregular';
+    letter-spacing: 3px;
 }
 
 .header {
@@ -28,6 +37,19 @@ h3 {
     margin-left: 30px;
 }
 
+.about {
+    display: flex;
+    flex-direction: column;
+    height: 820px;
+
+}
+.presentation__img--about {
+    display: block;
+    margin: auto;
+    width: 30%;
+    margin-top: 40px;
+}
+
 .presentation {
     display: flex;
     align-items: center;
@@ -36,7 +58,7 @@ h3 {
     margin: auto;
     height: 300px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 0px;
     flex-direction: column;
 }
 
@@ -45,7 +67,7 @@ h3 {
     font-size: 16px;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 0px;
     padding-top: 0px;
 
 }
@@ -53,18 +75,17 @@ h3 {
 .header__text-right {
     list-style: none;
     width: 80%;
-    margin-left: 200px;
     padding: 50px 0;
-    display: flexbox;
-    justify-content: right;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
 }
 
 .header__text-right,  .header__nav-li {
     display: inline-block;
-    right: right !important;
 }
 
-.header__text-right,  .header__nav-li a {
+.header__text-right  .header__nav-li a {
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -72,6 +93,9 @@ h3 {
     font-weight: bold;
     text-transform: uppercase;
     margin: 0 10px;
+    font-family: 'marker_feltregular';
+    letter-spacing: 2px;
+    align-items: left;
 }
 
 .header__text-right  .header__nav-li a,
@@ -83,6 +107,7 @@ h3 {
 .header__text-right,  .header__nav-li a:hover {
     color: white;
 }
+
 
 .Stroke .header__text-right,  .header__nav-li a {
     position: relative;
@@ -97,7 +122,7 @@ h3 {
     width: 0%;
     content: '.';
     color: transparent;
-    height: 1px;
+    height: 10px;
 }
 
 .Stroke .header__text-right,  .header__nav-li a:hover:after {
@@ -157,7 +182,7 @@ h3 {
 .main {
     height: 300px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .main__tittle {
@@ -165,7 +190,7 @@ h3 {
     font-size: 50px;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: -60px;
     padding-top: 0px;
 }
 
@@ -185,6 +210,12 @@ h3 {
     color: white;
 }
 
+.characteristics {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
 .carousel {
     width: 90%;
     overflow: scroll;
@@ -192,13 +223,13 @@ h3 {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-left: 30px;
+    margin-left: 100px;
 }
 
 .carousel__container {
     white-space: nowrap;
-    margin: 150px 0px;
-    padding-bottom: 10px;
+    margin: 100px 0px;
+    padding-bottom: 70px;
 }
 
 .carousel--item {
@@ -235,11 +266,18 @@ h3 {
 
 .carousel--item__details {
     background: linear-gradient(to top, rgba(0, 0, 0, 0,9) 0%, rgba(0, 0, 0, 0) 100%);
-    font-size: 10px;
+    font-size: 20px;
     opacity: 0;
     transition: 450ms opacity;
     padding: 10px;
     position: absolute;
+    margin-top: -30px;
+}
+
+.carousel--item__details--title {
+    margin: auto;
+    color: white;
+    position: relative;
 }
 
 .carousel--item__details:hover {
