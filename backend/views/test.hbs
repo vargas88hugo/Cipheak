@@ -4,19 +4,552 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Language</title>
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/styles-index.css" rel="stylesheet">
+  <style> 
+    @font-face {
+    font-family: 'marker_feltregular';
+    src: url('../font/marker_felt-webfont.woff2') format('woff2'),
+         url('../font/marker_felt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    margin: 0px;
+    background: linear-gradient(#231651, #2CF6B3);
+    font-family: 'Muli', sans-serif;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 170px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'marker_feltregular';
+    letter-spacing: 3px;
+}
+
+.header {
+    background-color: #231651;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.header__img {
+    margin-top: 10px;
+    width: 100px;
+    margin-left: 30px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    height: 820px;
+
+}
+.presentation__img--about {
+    display: block;
+    margin: auto;
+    width: 30%;
+    margin-top: 40px;
+}
+
+.presentation {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: center;
+    margin: auto;
+    height: 300px;
+    text-align: center;
+    padding-top: 0px;
+    flex-direction: column;
+}
+
+.presentation__first {
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    padding-top: 0px;
+
+}
+
+.header__text-right {
+    list-style: none;
+    width: 80%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.header__text-right,  .header__nav-li {
+    display: inline-block;
+}
+
+.header__text-right  .header__nav-li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 10px;
+    font-family: 'marker_feltregular';
+    letter-spacing: 2px;
+    align-items: left;
+}
+
+.header__text-right  .header__nav-li a,
+.header__text-right  .header__nav-li a:after,
+.header__text-right  .header__nav-li a:before {
+    transition: all .5s;
+}
+
+.header__text-right,  .header__nav-li a:hover {
+    color: white;
+}
+
+
+.Stroke .header__text-right,  .header__nav-li a {
+    position: relative;
+}
+
+.Stroke .header__text-right,  .header__nav-li a:after {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    height: 10px;
+}
+
+.Stroke .header__text-right,  .header__nav-li a:hover:after {
+    width: 100%;
+}
+.header__menu {
+    margin-right: 30px;
+    margin-top: 0px;
+}
+.header__menu:hover ul, ul:hover {
+    display: block;
+}
+
+.header__menu--profile {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.header__menu--profile img {
+    margin-right: 8px; 
+    width: 40px;
+}
+
+.header__menu--profile p {
+    margin-right: 0px;
+    width: 40px;
+    color: white;
+}
+.header__menu li {
+    margin: 10px -30px;
+}
+
+.header__menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+.header__menu ul {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    width: 100px;
+    text-align: right;
+    margin: 50px 0px 0px -15px;
+    position: absolute;
+}
+
+.background {
+    background: linear-gradient(#231651, #2CF6B3);
+    margin-top: -20px;
+}
+
+.main {
+    height: 300px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.main__tittle {
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: -60px;
+    padding-top: 0px;
+}
+
+.input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Muli', sans-serif;
+    width: 50%;
+    height: 50px;
+    padding: 0px 20px;
+    outline: none;
+    align-items: center;
+}
+::placeholder {
+    color: white;
+}
+
+.characteristics {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.carousel {
+    width: 90%;
+    overflow: scroll;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.carousel__container {
+    white-space: nowrap;
+    margin: 100px 0px;
+    padding-bottom: 70px;
+}
+
+.carousel--item {
+    background-color: white;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms;
+    transform-origin: center left;
+    position: relative;
+}
+
+.carousel--item:hover ~ .carousel--item {
+    transform: translate3d(100px, 0, 0);
+}
+.carousel__container:hover .carousel--item {
+    opacity: 0.3;
+}
+
+.carousel__container:hover .carousel--item:hover {
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.carousel--item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel--item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0,9) 0%, rgba(0, 0, 0, 0) 100%);
+    font-size: 20px;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    margin-top: -30px;
+}
+
+.carousel--item__details--title {
+    margin: auto;
+    color: white;
+    position: relative;
+}
+
+.carousel--item__details:hover {
+    opacity: 1;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    background-color: #231651;
+    height: 100px;
+    width: 100%;
+}
+
+.footer a {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .login__container {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+body {
+    margin: 0;
+    background: linear-gradient(#231651, #2CF6B3);
+    font-family: 'Muli', sans-serif;
+}
+.header {
+    background-color: #231651;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.header__img {
+    margin-top: 10px;
+    width: 100px;
+    margin-left: 30px;
+}
+
+/* Language Online */
+
+.background-language {
+    background: linear-gradient(#231651, #2CF6B3);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-y: scroll !important;
+    height: 2000px;
+
+}
+
+.login__container-language {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 40px;
+    color: #333;
+    padding: 60px 70px 40px;
+    min-height: 700px;
+    width: 1000px;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-left: 300;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    font-size: 18px;
+}
+
+
+
+.login {
+    background: linear-gradient(#231651, #2CF6B3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    /* View-Hight - Medida relativa al usuario */
+    min-height: calc(100vh - 200px);
+}
+
+.login__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 70px 40px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.login__container--form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__container--form label {
+    font-size: 14px;
+}
+
+.login__container--remember-me {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.login__container--remember-me a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login__container--or p {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+}
+.login__container--remember-me a:hover {
+    text-decoration: underline;
+}
+
+.login__container--social-media > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.login__container--social-media > div > img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.login__container--social-media > div > a {
+    color: white;
+    text-decoration: none;
+}
+
+.login__container--social-media > div > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login__container--register a {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.login__container--register a:hover {
+    text-decoration: underline;
+}
+
+.input {
+    background-color: transparent;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    font-family: 'Muli', sans-serif;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+    height: 50px;
+
+}
+
+::placeholder {
+    color: white;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Muli', sans-serif;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+    outline: none;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    background-color: #231651;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+}
+
+.footer a {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 30px;
+
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+    
+@media only screen and (max-width: 600px) {
+    .login__container {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+
+  </style>
 </head>
 <body>
   <script src="/js/login-page.js"></script>
-  <header class="header"><a href="./index.html"><img class="header__img" src="img/Cipheak-White.png" alt="logo Cipheak"></a>
-    <nav class="Stroke">
+  <header class="header"><a href="./index.html">
+{{!--   <img class="header__img" src="img/Cipheak-White.png" alt="logo Cipheak"> --}}
+  </a>
+  {{!--   <nav class="Stroke">
       <ul class="header__text-right">
         <li class="header__nav-li"><a href="/"><span class="header__link-underline">BE A CIPHEAKER</span></a></li>
         <li class="header__nav-li"><a href="./about"><span class="header__link-underline">ABOUT US</span></a></li>
         <li class="header__nav-li"><a href="whatis.html"><span class="header__link-underline">WHAT IS?</span></a></li>
       </ul>
-    </nav>
+    </nav> --}}
     <div class="header__menu">
       <div class="header__menu--profile"><img src="img/icons8-circled-user-64.png" alt="">
         <p>Cipheaker</p>
@@ -29,8 +562,8 @@
   </header>
   <section class="background-language background">
     <section class="login__container-language">
-      <img class="presentation__img--about" src="img/Cipheak-White.png" alt="logo Cipheak">
-      <h2>Welcome, {{ name }} Now you can start learning your language</h2>
+      {{!-- <img class="presentation__img--about" src="img/Cipheak-White.png" alt="logo Cipheak"> --}}
+      <h2>Welcome, {{ userName }} Now you can start learning your language</h2>
       <p>
         This language Is created by cipheak.com and {{ userName }}. It was created the {{ creationDate }}. The main characteristic of This language is that its grammar is regular. It means that if you make the choice to learn it, It won't take more than 2 months if you decide to dedicate 2 daily hours. During you learn This language you are going to find that it has roots from other languages. This language is a language that is going to help you to learn any other language easily. What is the key? This language is based on the grammar structure of the international language Esperanto. 
       </p>

@@ -44,6 +44,10 @@ app.get('/about', (req, res) => {
   res.render('about')
 });
 
+app.get('/whatis', (req, res) => {
+  res.render('whatis');
+})
+
 app.post('/action', (req, res) => {
   res.redirect('/auth/google');
 });
