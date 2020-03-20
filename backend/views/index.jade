@@ -1,1 +1,85 @@
-h3 hello world
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Cipheak
+    link(href='https://fonts.googleapis.com/css?family=Muli&display=swap', rel='stylesheet')
+    link(href='css/styles.css', rel='stylesheet')
+    link(href='css/ghost.css', rel='stylesheet')
+    link(href='css/ghost-button.css', rel='stylesheet')
+    link(href='css/styles-index.css', rel='stylesheet')
+  body
+    header.header
+      img.header__img(src='./img/Cipheak-White.png', alt='logo Cipheak')
+      nav.Stroke
+        ul.header__text-right
+          li.header__nav-li
+            a(href='/')
+              span.header__link-underline BE A CIPHEAKER
+          li.header__nav-li
+            a(href='/')
+              span.header__link-underline ABOUT US
+      .header__menu
+        .header__menu--profile
+          img(src='img/icons8-circled-user-64.png', alt='')
+          p Cipheaker
+          ul
+            li
+              a(href='/') Login
+            li
+              a(href='/') Sign Up
+    section.background
+      section
+        .container
+          .frame
+            .ghost.ghost__left(role='img', alt='a small, smiling ghost')
+              .ghost__body
+            .ghost.ghost__right(role='img', alt='a bigger smiling ghost who is talking to the smaller ghost')
+              .ghost__body
+            p.ghost__bubble
+              span.ghost__text
+                | People have created nearly 37,000 languages ​​in their history, but now, Cipheakers can create thousands or millions in just a few weeks
+      section.main
+        div
+          h2.main__tittle Give a name to your language
+          form(method='POST', action='/action')
+            input.input(type='text', name='name', placeholder='Cipheak Language')
+            input(type='submit', value='Submit')
+      section
+        h3 ABOUT US
+        .presentation
+          p.presentation__first
+            | We are students at Holberton School, from Cohort 9. We decided to create Cipheak because from the beginning it was an amazing idea, the step by step seemed clear according to our knowledges and we three have a common element between us: we like challenges.
+          p.presentation__first
+            | Cipheak is a language creator whose algorithm is bases on the esperanto's grammar structure. That structure allow us to create millions of languages. Go above, create your own language, try to learn it in less than two mounths, use it on your own way, be a Cipheaker
+      section.carousel
+        .carousel__container
+          .carousel--item
+            img.carousel--item__img(src='https://images.pexels.com/photos/1424246/pexels-photo-1424246.jpeg?cs=srgb&dl=photo-of-brown-house-near-mountain-1424246.jpg&fm=jpg', alt='')
+            div(carousel--item__details='')
+              div
+                img(src='./icons8-libro-80.png', alt='Cipheak Language information')
+                img(src='./icons8-descargar-80.png', alt='Download manual')
+              p.carousel--item__details--title  Título descriptivo
+              p.carousel--item__details--subtitle Created by
+          .carousel--item
+            img.carousel--item__img(src='https://images.pexels.com/photos/1424246/pexels-photo-1424246.jpeg?cs=srgb&dl=photo-of-brown-house-near-mountain-1424246.jpg&fm=jpg', alt='')
+            div(carousel--item__details='')
+              div
+                img(src='./icons8-libro-80.png', alt='Cipheak Language information')
+                img(src='./icons8-descargar-80.png', alt='Download manual')
+              p.carousel--item__details--title  Título descriptivo
+              p.carousel--item__details--subtitle Created by
+          .carousel--item
+            img.carousel--item__img(src='https://images.pexels.com/photos/1424246/pexels-photo-1424246.jpeg?cs=srgb&dl=photo-of-brown-house-near-mountain-1424246.jpg&fm=jpg', alt='')
+            div(carousel--item__details='')
+              div
+                img(src='./icons8-libro-80.png', alt='Cipheak Language information')
+                img(src='./icons8-descargar-80.png', alt='Download manual')
+              p.carousel--item__details--title  Título descriptivo
+              p.carousel--item__details--subtitle Created by
+    footer.footer
+      a(href='/') Terms of use
+      a(href='/') Privacy statement
+      a ® Cipheak, 2020

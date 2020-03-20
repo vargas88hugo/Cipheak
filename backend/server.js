@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')))
 
 authRoutes(app);
 
@@ -38,6 +39,10 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about')
+});
+
+app.post('/action', (req, res) => {
+  res.redirect('/auth/google');
 });
 
 app.listen(properties.PORT, () => {
