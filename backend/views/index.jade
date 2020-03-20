@@ -10,6 +10,7 @@ html(lang='en')
     link(href='css/ghost-button.css', rel='stylesheet')
     link(href='css/styles-index.css', rel='stylesheet')
   body
+    script(src='/js/login-page.js')
     header.header
       img.header__img(src='./img/Cipheak-White.png', alt='logo Cipheak')
       nav.Stroke
@@ -42,10 +43,9 @@ html(lang='en')
                 | People have created nearly 37,000 languages ​​in their history, but now, Cipheakers can create thousands or millions in just a few weeks
       section.main
         div
-          h2.main__tittle Give a name to your language
-          form(method='POST', action='/action')
-            input.input(type='text', name='name', placeholder='Cipheak Language')
-            input(type='submit', value='Submit')
+          h2.main__tittle Create your own language
+          a.button__ghost(href='/auth/google')
+            | CREATE LANGUAGE
       section
         h3 ABOUT US
         .presentation
@@ -79,6 +79,7 @@ html(lang='en')
                 img(src='./icons8-descargar-80.png', alt='Download manual')
               p.carousel--item__details--title  Título descriptivo
               p.carousel--item__details--subtitle Created by
+      script(src='/js/login-page.js')
     footer.footer
       a(href='/') Terms of use
       a(href='/') Privacy statement
