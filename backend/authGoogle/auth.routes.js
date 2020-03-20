@@ -1,4 +1,5 @@
 const passport = require('passport')
+const LanguageCreator = require('../languageGenerator/languageCreator');
 
 module.exports = (app) => {
   app.get('/auth/google', passport.authenticate('google', {
@@ -9,7 +10,46 @@ module.exports = (app) => {
   
   app.get('/auth/google/callback', passport.authenticate('google', {
     failureRedirect: '/auth/google/callback'}), (req, res) => {
-      res.redirect('/after-auth.html')
+      const lang = new LanguageCreator();
+      let name = require('./auth.controller');
+
+      res.render('test', {
+        userName: name,
+        creationDate: new Date(),
+        
+        rootBona: lang.roots['bona'],
+        rootCielo: lang.roots['ĉielo'],
+        rootEsti: lang.roots['esti'],
+        rootFarto: lang.roots['farto'],
+        rootMeza: lang.roots['meza'],
+        rootNokto: lang.roots['nokto'],
+        rootTago: lang.roots['tago'],
+        rootSaluton: lang.roots['saluton'],
+        rootSaxti: lang.roots['ŝati'],
+        rootStelo: lang.roots['stelo'],
+    
+        endAccusative: lang.terminations['endAccusative'],
+        endAdjective: lang.terminations['endAdjective'],
+        endAdverb: lang.terminations['endAdverb'],
+        endNoun: lang.terminations['endNoun'],
+        endPlural: lang.terminations['endPlural'],
+        endPresent: lang.terminations['endPresent'],
+        endInfinitive: lang.terminations['endInfinitive'],
+    
+        articleLa: lang.specialAdverbs['la'],
+        
+        prepositionEn: lang.prepositions['en'],
+        prepositionPost: lang.prepositions['post'],
+    
+        pronounI: lang.pronouns['i'],
+        pronounYou: lang.pronouns['you'],
+    
+        questionCorrelative: lang.questionCorrelative,
+    
+        modeCorrelative: lang.correlatives['modeCorrelative'],
+    
+        conjunctionKaj: lang.conjunctions['kaj']
+      });
     });
 
   app.get('/popup', (req, res, next) => {
