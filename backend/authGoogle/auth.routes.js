@@ -2,11 +2,13 @@ const passport = require('passport')
 
 module.exports = (app) => {
   app.get('/auth/google', passport.authenticate('google', {
-      scope: ['profile', 'email'] 
+      scope: ['profile', 'email'],
+      display: 'popup'
     })
   );
   
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get('/auth/google/callback', passport.authenticate('google', {
+    successRedirect: '/auth/popup', failureRedirect: '/auth/popup'}));
 
   app.get('/api/logout', (req, res) => {
     req.logout();
