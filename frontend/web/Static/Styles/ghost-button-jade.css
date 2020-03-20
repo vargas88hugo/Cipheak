@@ -1,0 +1,19 @@
+| @import url(https://fonts.googleapis.com/css?family=Lato:400,800,600);
+| a.button__ghost {
+| text-decoration: none;
+| font-size: 150%;
+| font-weight:600;
+| color: #FFF ;
+| border: 2px solid #FFF;
+| padding: 0.65em 1.7em;
+| display: inline-block;
+| overflow: hidden;
+| border-radius: 2px;
+| transition: all 0.6s ease 0s;
+| cursor: pointer;
+| margin-top: 40px;
+| }
+| a.button__ghost:hover {
+| background:#fff;
+| color: #000;
+| }
