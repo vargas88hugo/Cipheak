@@ -86,6 +86,7 @@ h3 {
 
 .Stroke .header__text-right,  .header__nav-li a {
     position: relative;
+    justify-content: right;
 }
 
 .Stroke .header__text-right,  .header__nav-li a:after {
