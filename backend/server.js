@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 authRoutes(app);
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('pdf');
 });
 
 app.get('/about', (req, res) => {
