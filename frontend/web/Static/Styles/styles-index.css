@@ -4,6 +4,16 @@ body {
     font-family: 'Muli', sans-serif;
 }
 
+h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 170px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
 .header {
     background-color: #231651;
     height: 100px;
@@ -18,6 +28,81 @@ body {
     margin-left: 30px;
 }
 
+.presentation {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    justify-content: center;
+    margin: auto;
+    height: 300px;
+    text-align: center;
+    padding-top: 30px;
+    flex-direction: column;
+}
+
+.presentation__first {
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 0px;
+
+}
+
+.header__text-right {
+    list-style: none;
+    width: 80%;
+    margin-left: 200px;
+    padding: 50px 0;
+    display: flexbox;
+    justify-content: right;
+}
+
+.header__text-right,  .header__nav-li {
+    display: inline-block;
+    right: right !important;
+}
+
+.header__text-right,  .header__nav-li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+.header__text-right  .header__nav-li a,
+.header__text-right  .header__nav-li a:after,
+.header__text-right  .header__nav-li a:before {
+    transition: all .5s;
+}
+
+.header__text-right,  .header__nav-li a:hover {
+    color: white;
+}
+
+.Stroke .header__text-right,  .header__nav-li a {
+    position: relative;
+}
+
+.Stroke .header__text-right,  .header__nav-li a:after {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    height: 1px;
+}
+
+.Stroke .header__text-right,  .header__nav-li a:hover:after {
+    width: 100%;
+}
 .header__menu {
     margin-right: 30px;
     margin-top: 0px;
@@ -105,6 +190,9 @@ body {
     overflow: scroll;
     padding: 30px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
 }
 
 .carousel__container {
@@ -143,7 +231,6 @@ body {
     width: 200px;
     height: 250px;
     object-fit: cover;
-
 }
 
 .carousel--item__details {
