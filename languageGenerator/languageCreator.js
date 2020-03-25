@@ -12,6 +12,10 @@ const PreffixCreator = require('./creator/preffixCreator');
 const PerfectTCreator = require('./creator/perfectTCreator');
 const ContinuouTCreator = require('./creator/continuouTCreator');
 
+/**
+ * This is the main class of the language creator. Gather all the 
+ * functions and classes here
+ */
 class LanguageCreator {
   constructor() {
     this.setAlphabet();

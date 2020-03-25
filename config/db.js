@@ -1,6 +1,9 @@
 const moongose = require('mongoose');
 const dbURL = require('./properties');
 
+/**
+ * Function that connects express with mongodb Atlas
+ */
 module.exports = () => {
   moongose.connect(dbURL.DB, {
     useUnifiedTopology: true, 

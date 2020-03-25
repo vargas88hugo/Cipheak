@@ -1,6 +1,10 @@
 const passport = require('passport')
 const LanguageCreator = require('../languageGenerator/languageCreator');
 
+/**
+ * Function that defines route authentication of google and defines
+ * the language screen 
+ */
 module.exports = (app) => {
   app.get('/auth/google', passport.authenticate('google', {
       scope: ['profile', 'email'],
@@ -52,6 +56,10 @@ module.exports = (app) => {
       });
     });
 
+  
+  /**
+   * Functions that handles with popup windows of authentication
+   */
   app.get('/popup', (req, res, next) => {
     res.render('auth-popup-callback', {layout: false});
   });

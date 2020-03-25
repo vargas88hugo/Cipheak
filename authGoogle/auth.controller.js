@@ -8,10 +8,18 @@ const User = mongoose.model('users')
 
 let name = "";
 
+/**
+ * This callback function seraliazes the id user to passport 
+ * and then store it
+ */
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+/**
+ * This callback function deseliazes the id user to passport 
+ * and then find user in database
+ */
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then(user => {
@@ -19,6 +27,10 @@ passport.deserializeUser((id, done) => {
     });
 });
 
+/**
+ * The main function of passport. It uses a google strategy and
+ * compares with the database. Return false if credentials are false
+ */
 passport.use(new GoogleStrategy({
   clientID: keys.googleClientID,
   clientSecret: keys.googleClientSecret,
