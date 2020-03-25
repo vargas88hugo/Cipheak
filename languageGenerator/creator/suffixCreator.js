@@ -2,7 +2,7 @@
  * Class that generates suffixes
  */
 class SuffixCreator {
-  suffixKeys = ['suffixePoor', 'suffixeContinual', 'suffixeConcrete', 'suffixeMember', 'suffixeCollection', 'suffixeMasculineAffectionate', 'suffixePossible', 'suffixeAbstract', 'suffixeAugmentative', 'suffixePlace', 'suffixePropensity', 'suffixeMandatory', 'suffixePart', 'suffixeLeader', 'suffixeDiminutive', 'suffoxeOffspring', 'suffixeProfessional', 'suffixeCause', 'suffixeBecome', 'suffixeInstrument', 'suffixeFemale', 'suffixeWorthy', 'suffixeDoctrine', 'femineAffectionate', 'suffixeMultiplication', 'suffixeFraction', 'suffixeCollectiveGroup', 'suffixeContainer', 'suffixeOneCharacterizedBy', 'suffixeAdHoc', 'sufixxeAu'];
+  suffixKeys = ['suffixePoor', 'suffixeContinual', 'suffixeConcrete', 'suffixeMember', 'suffixeCollection', 'suffixeMasculineAffectionate', 'suffixePossible', 'suffixeAbstract', 'suffixeAugmentative', 'suffixePlace', 'suffixePropensity', 'suffixeMandatory', 'suffixePart', 'suffixeLeader', 'suffixeDiminutive', 'suffoxeOffspring', 'suffixeProfessional', 'suffixeCause', 'suffixeBecome', 'suffixeInstrument', 'suffixeFemale', 'suffixeWorthy', 'suffixeDoctrine', 'femineAffectionate', 'suffixeMultiplication', 'suffixeFraction', 'suffixeCollectiveGroup', 'suffixeContainer', 'suffixeOneCharacterizedBy', 'suffixeAdHoc'];
   suffixes = {};
 
   constructor(combinations) {

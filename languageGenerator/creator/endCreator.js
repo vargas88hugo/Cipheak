@@ -5,7 +5,7 @@ class EndingCreator {
   ends = {};
   vowelConsonant = ['endNoun', 'endAdjective', 'endPast', 'endPresent', 'endConditional', 'endFuture', 'endAdverb', 'endAccusative'];
   vowel = ['endInfinitive', 'endImperative'];
-  vowelVowel = ['endPlural'];
+  vowelVowel = ['endPlural', 'suffixeAu'];
 
   constructor(combinator) {
     this.combinations = combinator;
