@@ -62,6 +62,12 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/lan', (req, res) => {
+  const lang = new LanguageCreator();
+
+  res.json(lang);
+});
+
 app.get('/about', (req, res) => {
   res.render('about')
 });
