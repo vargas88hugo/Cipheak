@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "date-and-time": "^0.13.1",
+    "date-and-time": "^0.14.2",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.2.13",
     "jspdf-customfonts": "0.0.4-rc.4",
